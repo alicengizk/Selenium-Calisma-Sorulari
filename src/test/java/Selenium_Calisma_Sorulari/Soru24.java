@@ -1,6 +1,14 @@
 package Selenium_Calisma_Sorulari;
 
-public class Soru24 {
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import utilities.TestBase;
+
+import java.util.List;
+
+public class Soru24 extends TestBase {
     /*
     ● Bir class oluşturun: DropDown
     ● https://the-internet.herokuapp.com/dropdown adresine gidin.
@@ -11,4 +19,28 @@ public class Soru24 {
         5. Dropdown’un boyutunu bulun, Dropdown’da 4 öğe varsa konsolda True , degilse
 False yazdırın.
      */
+
+    @Test
+    public void test01() {
+        driver.get("https://the-internet.herokuapp.com/dropdown");
+        WebElement ddm = driver.findElement(By.id("dropdown"));
+        Select select = new Select(ddm);
+        select.selectByIndex(1);
+        select.selectByValue("2");
+        select.selectByVisibleText("Option 1");
+        System.out.println(select.getFirstSelectedOption().getText());
+        List<WebElement> optionList = select.getOptions();
+        for (WebElement each:optionList
+        ) {
+            System.out.println(each.getText());
+        }
+        optionList.size();
+        if (optionList.size()==4){
+            System.out.println("True");
+        }else {
+            System.out.println("False");
+        }
+
+
+    }
 }

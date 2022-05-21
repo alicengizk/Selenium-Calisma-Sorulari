@@ -1,6 +1,12 @@
 package Selenium_Calisma_Sorulari;
 
-public class Soru21 {
+import org.junit.Assert;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import utilities.TestBase;
+
+public class Soru21 extends TestBase {
     /*
     1) Bir class oluşturun: YoutubeAssertions
     2) https://www.youtube.com adresine gidin
@@ -10,4 +16,19 @@ public class Soru21 {
         ○ Search Box 'in erisilebilir oldugunu test edin (isEnabled())
         ○ wrongTitleTest => Sayfa basliginin “youtube” olmadigini dogrulayin
      */
+
+    @Test
+    public void test01() {
+        driver.get("https://www.youtube.com");
+        String expectedTitle="YouTube";
+        String actualTitle=driver.getTitle();
+        Assert.assertEquals(expectedTitle,actualTitle);
+        driver.findElement(By.id("logo-icon")).isDisplayed();
+        driver.findElement(By.id("search")).isEnabled();
+        String expectedwrongTitle="youtube";
+        Assert.assertFalse(actualTitle.equals(expectedwrongTitle));
+
+
+
+    }
 }
