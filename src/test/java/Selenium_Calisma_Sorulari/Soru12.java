@@ -1,6 +1,11 @@
 package Selenium_Calisma_Sorulari;
 
-public class Soru12 {
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import utilities.TestBase;
+
+public class Soru12 extends TestBase {
     /*
     1 ) Bir class oluşturun : Locators_css
     2 ) Main method oluşturun ve aşağıdaki görevi tamamlayın.
@@ -13,4 +18,16 @@ public class Soru12 {
             ii. Password : Test1234!
     NOT: cssSelector kullanarak elementleri locate ediniz.
      */
+
+    @Test
+    public void test01() {
+     driver.get("http://a.testaddressbook.com/sign_in");
+        WebElement email=driver.findElement(By.xpath("//input[@type='email']"));
+        WebElement password=driver.findElement(By.xpath("//input[@type='password']"));
+        WebElement signIn=driver.findElement(By.xpath("//input[@type='submit']"));
+        email.sendKeys("testtechproed@gmail.com");
+        password.sendKeys("testtechproed@gmail.com");
+
+
+    }
 }
