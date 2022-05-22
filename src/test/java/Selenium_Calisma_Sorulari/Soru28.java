@@ -1,6 +1,9 @@
 package Selenium_Calisma_Sorulari;
 
-public class Soru28 {
+import org.junit.Test;
+import utilities.TestBase;
+
+public class Soru28 extends TestBase {
     /*
     Yeni bir Class Olusturun : C03_SoftAssert
     1. “http://zero.webappsecurity.com/” Adresine gidin
@@ -18,4 +21,10 @@ public class Soru28 {
 (dollar)","Japan (yen)","Mexico (peso)","Norway (krone)","New Zealand
 (dollar)","Sweden (krona)","Singapore (dollar)","Thailand (baht)"
      */
+
+    @Test
+    public void test01() {
+
+
+    }
 }
